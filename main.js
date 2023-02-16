@@ -1,10 +1,4 @@
-/*
-D3 Class Demo 1
-Prof. Mosca 
-Modified: 02/13/2023
-*/
-
-// set constants to make it easier
+// setting constants
 const FRAME_HEIGHT = 500;
 const FRAME_WIDTH = 200;
 const MARGINS = {left: 50, right: 50, top: 50, bottom: 50};
@@ -12,7 +6,7 @@ const MARGINS = {left: 50, right: 50, top: 50, bottom: 50};
 // binding data
 const data = [55000, 48000, 27000, 66000, 90000];
 
-// add frame
+// adding frame
 const FRAME = 
 d3.select("#vis1")
 	.append("svg")
@@ -20,7 +14,7 @@ d3.select("#vis1")
 	.attr("width", FRAME_WIDTH)
 	.attr("class", "frame");
 
-
+// more constants
 const VIS_HEIGHT = FRAME_HEIGHT - MARGINS.top - MARGINS.bottom;
 const VIS_WIDTH = FRAME_WIDTH - MARGINS.left - MARGINS.right;
 
@@ -35,6 +29,7 @@ const Y_SCALE = d3.scaleLinear()
 					.domain([0, (MAX_Y + 10000)])
 					.range([0, VIS_HEIGHT]);
 
+// adding points to frame
 FRAME.selectAll("points")
 		.data(data)
 		.enter()
